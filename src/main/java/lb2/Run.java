@@ -26,8 +26,8 @@ public class Run {
                 {
                     if ((matrix[i][j]>max_num)||(matrix[i][j]<min_num))
                     {
-                        System.out.println("Введений елемент не в діапазоні [-10;10]!");
-                        System.out.println("Введіть ще раз:");
+                        System.out.println("Entered number is outside of [-10;10]!");
+                        System.out.println("Enter a new number:");
                         matrix[i][j]=input_number();
                     }
                     else break;
@@ -37,7 +37,7 @@ public class Run {
     }
     static void print_matrix(int[][] matrix, int row, int column)
     {
-        System.out.println("Ваша матриця:");
+        System.out.println("Your matrix:");
         for (int i=0;i<row;i++)
         {
             for (int j=0;j<column;j++)
@@ -48,7 +48,7 @@ public class Run {
     }
     static int min_matrix(int[][] matrix, int row, int column)
     {
-        System.out.println("Мінімальний елемент матриці:");
+        System.out.println("Minimal element:");
         int min_elem=matrix[0][0];
         for (int i=0;i<row;i++)
         {
@@ -64,7 +64,7 @@ public class Run {
     }
     static int max_matrix(int[][] matrix, int row, int column)
     {
-        System.out.println("Максимальний елемент матриці:");
+        System.out.println("Maximm element:");
         int max_elem=matrix[0][0];
         for (int i=0;i<row;i++)
         {
@@ -80,7 +80,7 @@ public class Run {
     }
     static void avrg_matrix(int[][] matrix, int row, int column)
     {
-        System.out.println("Середнє арифметичне матриці:");
+        System.out.println("Average:");
         double sum=0;
         for (int i=0;i<row;i++)
         {
@@ -93,7 +93,7 @@ public class Run {
     }
     static void geom_matrix(int[][] matrix, int row, int column)
     {
-        System.out.println("Середнє геометричне матриці:");
+        System.out.println("Geometric mean:");
         double mult=1;
         for (int i=0;i<row;i++)
         {
@@ -110,21 +110,21 @@ public class Run {
         final int min=0;
         while (true)
         {
-            System.out.println("Вкажіть розміри матриці:");
-            System.out.println("Введіть кількість рядків:");
+            System.out.println("Enter matrix'size:");
+            System.out.println("Enter number of rows:");
             rows = input_number();
-            System.out.println("Введіть кількість стовпців:");
+            System.out.println("Enter number of columns:");
             columns = input_number();
             if (rows>20 || columns>20)
             {
-                System.out.println("Розмір матриці повинен не перевищувати 20 на 20.");
+                System.out.println("Matrix's size has to be less than 20x20.");
             }
             else break;
         }
         int[][] matrix = new int[rows][columns];
-        System.out.println("Бажаєте створити матрицю рандомно чи ввести значення самостійно?");
-        System.out.println("1. Рандомно\n"+"2. Самостійно");
-        System.out.println("Введіть 1 чи 2:");
+        System.out.println("Do you wanna create matrix randomly or enter numbers yourself?");
+        System.out.println("1. Randomly\n"+"2. Myself");
+        System.out.println("Enter 1 or 2:");
         int num_decision = input_number();
         switch (num_decision)
         {
@@ -132,7 +132,7 @@ public class Run {
                 random_matrix(matrix,rows,columns,min,max);
                 break;
             case (2):
-                System.out.println("Введіть елементи матриці в діапазоні [-10;10]:");
+                System.out.println("Enter matrix's element in interval [-10;10]:");
                 input_matrix(matrix,rows,columns,min,max);
                 break;
         }
