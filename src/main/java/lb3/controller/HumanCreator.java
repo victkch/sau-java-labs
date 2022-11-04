@@ -1,10 +1,10 @@
 package lb3.controller;
 
-import lb3.model.human;
+import lb3.model.Human;
 
-public class humanCreator {
-    public human createHuman(String lastName,String firstName,String fatherName,String sex){
-        human newHuman=new human();
+public class HumanCreator {
+    public Human createHuman(String lastName, String firstName, String fatherName, String sex) {
+        Human newHuman = new Human();
         newHuman.setLastName(lastName);
         newHuman.setFirstName(firstName);
         newHuman.setFatherName(fatherName);
