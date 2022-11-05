@@ -35,7 +35,7 @@ public class Run {
         return matrix;
     }
 
-    static void print_matrix(int[][] matrix, int numberOfRows, int numberOfColumns) {
+    static void printMatrix(int[][] matrix, int numberOfRows, int numberOfColumns) {
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
                 System.out.println("[" + i + "][" + j + "] = " + matrix[i][j]);
@@ -43,7 +43,7 @@ public class Run {
         }
     }
 
-    static int minimalMatrixElement(int[][] matrix, int numberOfRows, int numberOfColumns) {
+    static int findMinimalMatrixElement(int[][] matrix, int numberOfRows, int numberOfColumns) {
         int minMatrixElem = matrix[0][0];
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
@@ -55,7 +55,7 @@ public class Run {
         return minMatrixElem;
     }
 
-    static int maximalMatrixElement(int[][] matrix, int numberOfRows, int numberOfColumns) {
+    static int findMaximalMatrixElement(int[][] matrix, int numberOfRows, int numberOfColumns) {
         int maxMatrixElem = matrix[0][0];
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
@@ -67,24 +67,24 @@ public class Run {
         return maxMatrixElem;
     }
 
-    static double matrixAverage(int[][] matrix, int numberOfRows, int numberOfColumns) {
+    static double calculateMatrixAverage(int[][] matrix, int numberOfRows, int numberOfColumns) {
         double sumOfElements = 0;
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
                 sumOfElements += matrix[i][j];
             }
         }
-        return Math.round((sumOfElements / (numberOfRows * numberOfColumns))*100)/100.0;
+        return Math.round((sumOfElements / (numberOfRows * numberOfColumns)) * 100) / 100.0;
     }
 
-    static double matrixGeomMean(int[][] matrix, int numberOfRows, int numberOfColumns) {
+    static double calculateMatrixGeomMean(int[][] matrix, int numberOfRows, int numberOfColumns) {
         double multiplyEachElement = 1;
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
                 multiplyEachElement *= matrix[i][j];
             }
         }
-        return Math.round(Math.pow(multiplyEachElement, 1.0 / (numberOfRows * numberOfColumns))*100)/100.0;
+        return Math.round(Math.pow(multiplyEachElement, 1.0 / (numberOfRows * numberOfColumns)) * 100) / 100.0;
     }
 
     public static void main(String[] args) {
@@ -114,14 +114,14 @@ public class Run {
                 break;
         }
         System.out.println("Your matrix:");
-        print_matrix(matrix, numberOfMatrixRows, numberOfMatrixColumns);
+        printMatrix(matrix, numberOfMatrixRows, numberOfMatrixColumns);
         System.out.println("Min element:");
-        System.out.println(minimalMatrixElement(matrix, numberOfMatrixRows, numberOfMatrixColumns));
+        System.out.println(findMinimalMatrixElement(matrix, numberOfMatrixRows, numberOfMatrixColumns));
         System.out.println("Max element:");
-        System.out.println(maximalMatrixElement(matrix, numberOfMatrixRows, numberOfMatrixColumns));
+        System.out.println(findMaximalMatrixElement(matrix, numberOfMatrixRows, numberOfMatrixColumns));
         System.out.println("Average:");
-        System.out.println(matrixAverage(matrix, numberOfMatrixRows, numberOfMatrixColumns));
+        System.out.println(calculateMatrixAverage(matrix, numberOfMatrixRows, numberOfMatrixColumns));
         System.out.println("Geometric mean:");
-        System.out.println(matrixGeomMean(matrix, numberOfMatrixRows, numberOfMatrixColumns));
+        System.out.println(calculateMatrixGeomMean(matrix, numberOfMatrixRows, numberOfMatrixColumns));
     }
 }
